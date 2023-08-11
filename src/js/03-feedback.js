@@ -6,7 +6,6 @@ const formEl = document.querySelector('.feedback-form');
 const inputEl = formEl[(name = 'email')];
 const textAreaEl = formEl[(name = 'message')];
 
-const allData = {};
 savedStorageValue();
 
 formEl.addEventListener('submit', onSubmitHandler);
@@ -21,6 +20,10 @@ function onSubmitHandler(e) {
 }
 
 function onTextarealHandler(e) {
+  const allData = {
+    email: inputEl.value,
+    message: textAreaEl.value,
+  };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(allData));
   allData[e.target.name] = e.target.value;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(allData));
