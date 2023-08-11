@@ -13,6 +13,9 @@ formEl.addEventListener('input', throttle(onTextarealHandler, 500));
 
 function onSubmitHandler(e) {
   e.preventDefault();
+  if (inputEl.value === '' || textAreaEl.value === '') {
+    return;
+  }
   const savedText = JSON.parse(localStorage.getItem(STORAGE_KEY));
   console.log(savedText);
   e.currentTarget.reset();

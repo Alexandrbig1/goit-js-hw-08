@@ -15,4 +15,4 @@ function updatingTimeLocalStorage({ seconds }) {
   localStorage.setItem(KEY_STORAGE, seconds);
 }
 
-player.setCurrentTime(localStorage.getItem(KEY_STORAGE));
+player.setCurrentTime(localStorage.getItem(KEY_STORAGE) || 0);
